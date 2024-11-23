@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Library<span>Hub</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#add-book">Add Book</a></li>
+                <li><a href="#list-books">List Books</a></li>
+                <li><a href="#borrow-book">Borrow Book</a></li>
+                <li><a href="#return-book">Return Book</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to LibraryHub</h2>
+            <p>Your one-stop solution for managing your library seamlessly.</p>
+            <a href="#add-book" class="cta-button">Get Started</a>
+        </section>
+
+        <section id="add-book" class="section">
+            <h2>Add a Book</h2>
+            <form>
+                <input type="text" placeholder="ISBN" required>
+                <input type="text" placeholder="Title" required>
+                <input type="text" placeholder="Author" required>
+                <input type="text" placeholder="Genre" required>
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+        <section id="list-books" class="section">
+            <h2>Books Available</h2>
+            <div class="books-container">
+                <!-- Placeholder for dynamic book entries -->
+                <div class="book-card">
+                    <h3>Book Title</h3>
+                    <p>Author: John Doe</p>
+                    <p>Genre: Fiction</p>
+                    <p>Status: Available</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="borrow-book" class="section">
+            <h2>Borrow a Book</h2>
+            <form>
+                <input type="number" placeholder="Book ID" required>
+                <button type="submit">Borrow</button>
+            </form>
+        </section>
+
+        <section id="return-book" class="section">
+            <h2>Return a Book</h2>
+            <form>
+                <input type="number" placeholder="Book ID" required>
+                <button type="submit">Return</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LibraryHub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
