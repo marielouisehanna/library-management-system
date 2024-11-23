@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Library<span>+</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#librarians">Librarians</a></li>
+                <li><a href="#members">Members</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#transactions">Transactions</a></li>
+                <li><a href="#fines">Fines</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to the Library</h2>
+        <p>Your gateway to knowledge and adventure.</p>
+    </section>
+
+    <section id="librarians" class="content">
+        <h2>Librarians</h2>
+        <div id="librarian-list" class="grid"></div>
+    </section>
+
+    <section id="members" class="content">
+        <h2>Members</h2>
+        <div id="member-list" class="grid"></div>
+    </section>
+
+    <section id="books" class="content">
+        <h2>Books</h2>
+        <div id="book-list" class="grid"></div>
+    </section>
+
+    <section id="transactions" class="content">
+        <h2>Transactions</h2>
+        <div id="transaction-list" class="grid"></div>
+    </section>
+
+    <section id="fines" class="content">
+        <h2>Fines</h2>
+        <div id="fine-list" class="grid"></div>
+    </section>
+
+    <footer>
+        <p>© 2024 Library+. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Fetch and display data dynamically
+        const fetchData = (url, containerId) => {
+            $.getJSON(url, function(data) {
+                let htmlContent = '';
+                data.forEach(item => {
+                    htmlContent += `<div class="card"><pre>${JSON.stringify(item, null, 2)}</pre></div>`;
+                });
+                $(`#${containerId}`).html(htmlContent);
+            });
+        };
+
+        $(document).ready(function() {
+            fetchData('/librarians', 'librarian-list');
+            fetchData('/members', 'member-list');
+            fetchData('/books', 'book-list');
+            fetchData('/transactions', 'transaction-list');
+            fetchData('/fines', 'fine-list');
+        });
+    </script>
+</body>
+</html>
